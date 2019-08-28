@@ -15,6 +15,8 @@ public class Cola extends SoftDrink {
 		return quantOfIng;
 	}
 	
+	
+	@Override
 	public String toString() {
 		String extra = "Cola [SugarType: " + getSugarType(0) + " Fizz: " + getFizz() + 
 				" Cola Composition: "; 

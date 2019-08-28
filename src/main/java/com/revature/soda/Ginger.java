@@ -22,6 +22,7 @@ public class Ginger extends SoftDrink{
 		return isGingerRaw;
 	}
 		
+	@Override
 	public String toString() {
 		String extra = "Ginger [SugarType: " + getSugarType(0) + " Fizz: " + getFizz() + 
 				" Ginger Composition: "; 
