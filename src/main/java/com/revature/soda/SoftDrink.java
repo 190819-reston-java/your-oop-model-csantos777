@@ -4,24 +4,38 @@ package com.revature.soda;
 public abstract class SoftDrink implements Production {
 	
 	private String sugarType;
-	private final double WATER;
+	private final String WATER;
+	private final double LIQUID;
 	private boolean isCold;
 	private boolean doesFizz;
 	
 	SoftDrink() {
 		super();
+		WATER = "Water";
 		sugarType = "Cane Sugar";
-		WATER = 1.0;
+		LIQUID = 1.0;
 		isCold = true;
 		doesFizz = true;
 	}
 	
 	SoftDrink(String sugar) {
 		this.sugarType = sugar;
-		WATER = 1.0;
+		LIQUID = 1.0;
+		WATER = "Water";
 	}
 	
-	public abstract double[] ingredientStmt();
+	protected boolean isValidLiquid(double[] ingrdt) {
+		double result = 0;
+		for (double a : ingrdt) {
+			result += a;
+		}
+		if (result == LIQUID) 
+			return true;
+		else
+			return false;
+	}
+	
+	public abstract String feedback(String shortReview);
 	
 	public int howToPack(String type) {
 		if (type.equals("glass"))
@@ -38,7 +52,7 @@ public abstract class SoftDrink implements Production {
 		return doesFizz;
 	}
 	
-	public double getWater() {
+	public String getWater() {
 		return WATER;
 	}
 	
@@ -54,7 +68,7 @@ public abstract class SoftDrink implements Production {
 	}
 	
 	public String toString() {
-		return "SoftDrink [" + sugarType + "," + isCold + ",Water=" + WATER + "]"; 
+		return "SoftDrink [" + sugarType + "," + isCold + ",Water=" + LIQUID + "]"; 
 	}
 	
 	public boolean waterIsPure() {

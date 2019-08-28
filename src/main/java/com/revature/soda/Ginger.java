@@ -6,20 +6,31 @@ public class Ginger extends SoftDrink{
 	private double[] quantOfIng;
 	
 	private static boolean isGingerRaw;
+	private static String gingerDrinkType;
 	Ginger() {
 		super();
-		ingredients = new String[] {"Ginger","Lemon","Lime"};
-		quantOfIng = new double[] {0.7,0.4,0.4,getWater()};
+		ingredients = new String[] {"Ginger","Lemon","Lime",getWater()};
+		quantOfIng = new double[] {0.5,0.1,0.1,0.3};
 		isGingerRaw = true;
 	}
-		
-	public double[] ingredientStmt() {
-		quantOfIng[3] = getWater();
-		return quantOfIng;
+	Ginger(String drinkType, boolean gingerFresh) {
+		super();
+		ingredients = new String[] {"Ginger","Lemon","Lime",getWater()};
+		quantOfIng = new double[] {0.5,0.1,0.1,0.3};
+		isGingerRaw = gingerFresh;
+		this.gingerDrinkType = drinkType;
 	}
 	
 	public boolean isGingerRaw() {
 		return isGingerRaw;
+	}
+	
+	public boolean isValidGingerDrink() {
+		return isValidLiquid(quantOfIng);
+	}
+	
+	public String feedback(String shortReview) {
+		return shortReview;
 	}
 		
 	@Override
@@ -29,7 +40,6 @@ public class Ginger extends SoftDrink{
 		for (int a = 0; a < ingredients.length; ++a) {
 			extra += ingredients[a] + ": " + quantOfIng[a] + " ";
 		}
-		extra += "Water: " + quantOfIng[3];
 		return extra + "]";
 	}
 

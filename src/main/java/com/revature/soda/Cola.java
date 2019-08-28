@@ -7,14 +7,16 @@ public class Cola extends SoftDrink {
 	Cola() {
 		super();
 		ingredients = new String[] {"Caramel","Cola Nut","Vanilla"};
-		quantOfIng = new double[] {0.5,0.75,0.4,getWater()};
+		quantOfIng = new double[] {0.3,0.4,0.1,0.2};
 	}
 	
-	public double[] ingredientStmt() {
-		quantOfIng[3] = getWater();
-		return quantOfIng;
+	public boolean isValidColaDrink() {
+		return isValidLiquid(quantOfIng);
 	}
 	
+	public String feedback(String shortReview) {
+		return shortReview;
+	}
 	
 	@Override
 	public String toString() {
