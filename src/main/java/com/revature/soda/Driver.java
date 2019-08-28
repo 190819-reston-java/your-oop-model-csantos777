@@ -3,7 +3,8 @@ package com.revature.soda;
 public class Driver {
 
 	public static void main(String[] args) {
-		// Soda objects go here.
+		SoftDrink a = new Cola();
+		System.out.println(a.toString());
 	}
 
 }

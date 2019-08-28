@@ -6,18 +6,24 @@ public abstract class SoftDrink implements Production {
 	private final String SUGAR_TYPE;
 	private final double WATER;
 	private boolean isCold;
+	private boolean doesFizz;
 	
 	SoftDrink() {
 		super();
 		SUGAR_TYPE = "Cane Sugar";
 		WATER = 1.0;
 		isCold = true;
+		doesFizz = true;
 	}
 	
 	public abstract double[] ingredientStmt();
 	
 	public String getSugarType(int i) {
 		return SUGAR_TYPE;
+	}
+	
+	public boolean getFizz() {
+		return doesFizz;
 	}
 	
 	public double getWater() {

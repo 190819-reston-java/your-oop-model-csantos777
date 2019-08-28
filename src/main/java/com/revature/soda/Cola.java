@@ -7,7 +7,7 @@ public class Cola extends SoftDrink {
 	Cola() {
 		super();
 		ingredients = new String[] {"Caramel","Cola Nut","Vanilla"};
-		quantOfIng = new double[] {0.5,0.75,0.4,0.0};
+		quantOfIng = new double[] {0.5,0.75,0.4,getWater()};
 	}
 	
 	public double[] ingredientStmt() {
@@ -16,11 +16,13 @@ public class Cola extends SoftDrink {
 	}
 	
 	public String toString() {
-		String extra = ""; 
+		String extra = "Cola [SugarType: " + getSugarType(0) + " Fizz: " + getFizz() + 
+				" Cola Composition: "; 
 		for (int a = 0; a < ingredients.length; ++a) {
-			extra = "Cola Composition: " + ingredients[a] + ": " + quantOfIng[a];
+			extra += ingredients[a] + ": " + quantOfIng[a] + " ";
 		}
-		return "Cola [" + extra + "]";
+		extra += "Water: " + quantOfIng[3];
+		return extra + "]";
 	}
 
 }
