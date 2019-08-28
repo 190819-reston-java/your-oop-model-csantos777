@@ -47,8 +47,5 @@ public abstract class SoftDrink implements Production {
 		return true;
 	}
 	
-	public String methodOfMixture() {
-		return 
-	}
 	
 }
