@@ -3,25 +3,25 @@ package com.revature.soda;
 
 public abstract class SoftDrink {
 	
-	private final String[] sugarType;
-	private final double water;
+	private final String SUGAR_TYPE;
+	private final double WATER;
 	private boolean isCold;
 	
 	SoftDrink() {
 		super();
-		sugarType = new String[]{"Cane Sugar","High Fructose Corn Syrup","Misc"};
-		water = 1.0;
+		SUGAR_TYPE = "Cane Sugar";
+		WATER = 1.0;
 		isCold = true;
 	}
 	
-	public abstract double ingredientMixer();
+	public abstract double[] ingredientStmt();
 	
 	public String getSugarType(int i) {
-		return sugarType[i];
+		return SUGAR_TYPE;
 	}
 	
 	public double getWater() {
-		return water;
+		return WATER;
 	}
 	
 	// there are no setter methods because both the water and 
@@ -33,6 +33,10 @@ public abstract class SoftDrink {
 	
 	public void setIsCold(boolean isCold) {
 		this.isCold = isCold;
+	}
+	
+	public String toString() {
+		return "SoftDrink [" + SUGAR_TYPE + "," + isCold + ",Water=" + WATER + "]"; 
 	}
 	
 }
