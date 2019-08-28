@@ -1,7 +1,7 @@
 package com.revature.soda;
 
 
-public abstract class SoftDrink {
+public abstract class SoftDrink implements Production {
 	
 	private final String SUGAR_TYPE;
 	private final double WATER;
@@ -37,6 +37,18 @@ public abstract class SoftDrink {
 	
 	public String toString() {
 		return "SoftDrink [" + SUGAR_TYPE + "," + isCold + ",Water=" + WATER + "]"; 
+	}
+	
+	public boolean waterIsPure() {
+		return true;
+	}
+	
+	public boolean carbonation() {
+		return true;
+	}
+	
+	public String methodOfMixture() {
+		return 
 	}
 	
 }
