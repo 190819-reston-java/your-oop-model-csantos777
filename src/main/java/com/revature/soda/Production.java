@@ -6,6 +6,12 @@ public interface Production {
 	boolean waterIsPure();
 	
 	// evaluates whether carbon dioxide is added.
-	// will also evaluate the intensity.
+	// needs to call meansOfProduction() function to
+	// evaluate how intense the carbonation is.
 	double carbonation(String type);
+	
+	// this evaluates how the drink is made.
+	// if it's made in a sophisticated factory, for example, it is likely that the carbination is intense
+	// if it's made in smaller batches, closer to "cooking it in a kettle", the carbonation won't be as intense.
+	//String meansOfProduction();
 }

@@ -44,6 +44,10 @@ public abstract class SoftDrink implements Production {
 			return 1;
 	}
 	
+	public double getLiquid() {
+		return LIQUID;
+	}
+	
 	public String getSugarType(int i) {
 		return sugarType;
 	}
@@ -78,11 +82,12 @@ public abstract class SoftDrink implements Production {
 	public double carbonation(String type) {
 		if (type.equals("CO2") || type.equalsIgnoreCase("Carbon Dioxide"))
 			return 0.25;
-		else if (type.equalsIgnoreCase("Citric Acid"))
-			return 0.125;
 		else
 			return 0.0;
 	}
+	
+	// The point of comparison will be over how much water is left in each drink object.
+	//public int compareTo()
 	
 	
 }
