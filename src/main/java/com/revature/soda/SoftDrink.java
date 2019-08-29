@@ -75,8 +75,13 @@ public abstract class SoftDrink implements Production {
 		return true;
 	}
 	
-	public boolean carbonation() {
-		return true;
+	public double carbonation(String type) {
+		if (type.equals("CO2") || type.equalsIgnoreCase("Carbon Dioxide"))
+			return 0.25;
+		else if (type.equalsIgnoreCase("Citric Acid"))
+			return 0.125;
+		else
+			return 0.0;
 	}
 	
 	

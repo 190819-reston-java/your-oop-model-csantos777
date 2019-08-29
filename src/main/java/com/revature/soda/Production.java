@@ -6,6 +6,6 @@ public interface Production {
 	boolean waterIsPure();
 	
 	// evaluates whether carbon dioxide is added.
-	// will also evaluate the intensity, in which I'll just change this to double soon enough.
-	boolean carbonation();
+	// will also evaluate the intensity.
+	double carbonation(String type);
 }
