@@ -49,7 +49,7 @@ public class Driver {
 			c.meansOfMixing();
 		} catch (NonFormulaException e) {
 			System.out.println("No such drink exists");
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 		
 		System.out.println("Bye!");
