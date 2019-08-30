@@ -52,9 +52,5 @@ public class Cola extends SoftDrink implements Production {
 		}
 		return extra + getWater() + ": " + (1-ingSum(recipeQuant)) + "]";
 	}
-	
-//	public int compareTo(Cola e) {
-//		return this.getName().compareTo(e.getName());
-//	}
 
 }

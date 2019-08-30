@@ -2,6 +2,7 @@ package com.revature.soda;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.Set;
@@ -18,7 +19,7 @@ public class Driver {
 				"\nWhat kind of Ginger drink is this? " + b.getGingerDrinkType());
 		
 		
-		Ginger ba = new Ginger("Q","Ginger Beer", true, 0.2,0.1,0.2);
+		Ginger ba = new Ginger("Q","Beer", true, 0.2,0.1,0.2);
 		System.out.println(ba);
 		Cola ab = new Cola("Q",0.1,0.1,0.4);
 		System.out.println(ab);
@@ -30,9 +31,10 @@ public class Driver {
 		softDrinkList.add(ba);
 		
 		System.out.println(softDrinkList);
-		Set<SoftDrink> sortedSDL = new TreeSet<SoftDrink>(softDrinkList);
+		//Set<SoftDrink> sortedSDL = new TreeSet<SoftDrink>(softDrinkList);
+		Collections.sort(softDrinkList);
 		
-		System.out.println("sortedSDL: " + sortedSDL);
+		System.out.println("sortedSDL: " + softDrinkList);
 		
 		
 		

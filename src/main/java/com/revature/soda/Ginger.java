@@ -71,15 +71,11 @@ public class Ginger extends SoftDrink implements Production {
 	@Override
 	public String toString() {
 		String extra = "Ginger [Name: " + name + " SugarType: " + getSugarType(0) + " Fizz: " + getFizz() + 
-				" Ginger Composition: ";
+				" Ginger Type: " + gingerDrinkType + " Ginger Composition: ";
 		for (int a = 0; a < ingredients.length; ++a) {
 			extra += ingredients[a] + ": " + recipeQuant[a] + " ";
 		}
 		return extra + getWater() + ": " + (1-ingSum(recipeQuant)) + "]";
 	}
-	
-//	public int compareTo(Ginger e) {
-//		return this.getName().compareTo(e.getName());
-//	}
 
 }
