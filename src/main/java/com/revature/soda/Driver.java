@@ -11,13 +11,13 @@ public class Driver {
 		System.out.println(a.toString() + " Fizz? " + a.getFizz());
 		System.out.println(b.toString() + " Fizz? " + b.getFizz() + " Is ginger raw? " + (b.isGingerRaw()));
 		
-		System.out.println("Is liquid? " + b.isValidGingerDrink() +
+		System.out.println("Is liquid? " +
 				"\nWhat kind of Ginger drink is this? " + b.getGingerDrinkType());
 		
 		
-		Ginger ba = new Ginger("Q","Ginger Beer", true, 0.2,0.1,0.1,0.6);
+		Ginger ba = new Ginger("Q","Ginger Beer", true, 0.2,0.1,0.2);
 		System.out.println(ba);
-		Cola ab = new Cola("Q",0.2,0.1,0.1,0.6);
+		Cola ab = new Cola("Q",0.1,0.1,0.4);
 		System.out.println(ab);
 		
 		List<SoftDrink> softDrinkList = new ArrayList<SoftDrink>();

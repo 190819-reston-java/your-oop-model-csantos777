@@ -1,48 +1,48 @@
 package com.revature.soda;
 
-public class Ginger extends SoftDrink{
+public class Ginger extends SoftDrink implements Production, Comparable<Ginger>{
 		
 	private String name;
 	private String[] ingredients;
 	private double[] recipeQuant;
+	private double waterLeft;
 	
 	private static boolean isGingerRaw;
 	private static String gingerDrinkType;
 	Ginger() {
 		super();
 		name = "Generic";
-		ingredients = new String[] {"Ginger","Lemon","Lime",getWater()};
-		recipeQuant = new double[] {0.5,0.1,0.1,0.3};
+		waterLeft = 0;
+		ingredients = new String[] {"Ginger","Lemon","Lime"};
+		recipeQuant = new double[] {0.5,0.1,0.1};
 		isGingerRaw = true;
 		gingerDrinkType = "Ginger Ale";
 	}
 	Ginger(String name, String drinkType, boolean isGingerRaw) {
 		super();
 		this.name = name;
-		ingredients = new String[] {"Ginger","Lemon","Lime",getWater()};
-		recipeQuant = new double[] {0.5,0.1,0.1,0.3};
-		this.isGingerRaw = isGingerRaw;
-		this.gingerDrinkType = drinkType;
+		waterLeft = 0;
+		ingredients = new String[] {"Ginger","Lemon","Lime"};
+		recipeQuant = new double[] {0.5,0.1,0.1};
+		Ginger.isGingerRaw = isGingerRaw;
+		Ginger.gingerDrinkType = drinkType;
 	}
-	Ginger(String name, String drinkType, boolean isGingerRaw, double ing1, double ing2, double ing3, double ing4) {
+	Ginger(String name, String drinkType, boolean isGingerRaw, double ing1, double ing2, double ing3) {
 		super();
 		this.name = name;
-		ingredients = new String[] {"Ginger","Lemon","Lime",getWater()};
-		this.isGingerRaw = isGingerRaw;
-		this.gingerDrinkType = drinkType;
-		recipeQuant = new double[] {ing1,ing2,ing3,ing4};
+		waterLeft = 0;
+		ingredients = new String[] {"Ginger","Lemon","Lime"};
+		Ginger.isGingerRaw = isGingerRaw;
+		Ginger.gingerDrinkType = drinkType;
+		recipeQuant = new double[] {ing1,ing2,ing3};
 	}
 	
 	public String getGingerDrinkType() {
-		return this.gingerDrinkType;
+		return Ginger.gingerDrinkType;
 	}
 	
 	public boolean isGingerRaw() {
 		return isGingerRaw;
-	}
-	
-	public boolean isValidGingerDrink() {
-		return isValidLiquid(recipeQuant);
 	}
 	
 	public String feedback(String shortReview) {
@@ -56,6 +56,18 @@ public class Ginger extends SoftDrink{
 		this.name = name;
 	}
 		
+	public double meansOfMixing() {
+		waterLeft = getLiquid() - ingSum(recipeQuant);
+		System.out.println("result " + waterLeft);
+		
+		if (waterLeft > 1.0) // checked exception
+			throw new NonFormulaException("There's only more water added. No ingredients here.");
+		else if (waterLeft < 0.0)
+			throw new NonFormulaException("The water is gone.");
+		else
+			return ingSum(recipeQuant);
+	}
+	
 	@Override
 	public String toString() {
 		String extra = "Ginger [Name: " + name + " SugarType: " + getSugarType(0) + " Fizz: " + getFizz() + 
@@ -63,7 +75,11 @@ public class Ginger extends SoftDrink{
 		for (int a = 0; a < ingredients.length; ++a) {
 			extra += ingredients[a] + ": " + recipeQuant[a] + " ";
 		}
-		return extra + "valid?: " + isValidGingerDrink() + "]";
+		return extra + getWater() + ": " + (1-ingSum(recipeQuant)) + "]";
+	}
+	
+	public int compareTo(Ginger e) {
+		return this.getName().compareTo(e.getName());
 	}
 
 }

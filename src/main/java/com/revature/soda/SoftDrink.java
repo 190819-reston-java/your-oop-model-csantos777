@@ -1,7 +1,7 @@
 package com.revature.soda;
 
 
-public abstract class SoftDrink implements Production {
+public abstract class SoftDrink {
 	
 	private String sugarType;
 	private final String WATER;
@@ -24,15 +24,11 @@ public abstract class SoftDrink implements Production {
 		WATER = "Water";
 	}
 	
-	protected boolean isValidLiquid(double[] ingrdt) {
-		double result = 0;
-		for (double a : ingrdt) {
-			result += a;
-		}
-		if (result == LIQUID) 
-			return true;
-		else
-			return false;
+	protected double ingSum(double[] arr) {
+		double result = 0.0;
+		for (double e: arr)
+			result += e;
+		return result;
 	}
 	
 	public abstract String feedback(String shortReview);
@@ -86,8 +82,8 @@ public abstract class SoftDrink implements Production {
 			return 0.0;
 	}
 	
+	
 	// The point of comparison will be over how much water is left in each drink object.
-	//public int compareTo()
 	
 	
 }
