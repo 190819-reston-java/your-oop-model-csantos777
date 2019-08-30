@@ -1,5 +1,6 @@
 package com.revature.soda;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,9 +33,17 @@ public class Driver {
 		
 		System.out.println(softDrinkList);
 		//Set<SoftDrink> sortedSDL = new TreeSet<SoftDrink>(softDrinkList);
-		Collections.sort(softDrinkList);
+		//Collections.sort(softDrinkList);
 		
-		System.out.println("sortedSDL: " + softDrinkList);
+		SoftDrink[] softDrinkArr = softDrinkList.toArray(new SoftDrink[softDrinkList.size()]);
+		
+		for (int c = 0; c  < softDrinkArr.length; ++c)
+			softDrinkArr[c] = softDrinkList.get(c);
+			
+		Arrays.sort(softDrinkArr);
+		
+		for (SoftDrink e : softDrinkArr)
+			System.out.println("sortedSDL: " + e);
 		
 		
 		
