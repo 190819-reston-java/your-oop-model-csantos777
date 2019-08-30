@@ -1,7 +1,7 @@
 package com.revature.soda;
 
 
-public abstract class SoftDrink {
+public abstract class SoftDrink implements Comparable<SoftDrink>{
 	
 	private String sugarType;
 	private final String WATER;
@@ -9,6 +9,9 @@ public abstract class SoftDrink {
 	private boolean isCold;
 	private boolean doesFizz;
 	
+	private String name;
+	
+
 	SoftDrink() {
 		super();
 		WATER = "Water";
@@ -22,6 +25,14 @@ public abstract class SoftDrink {
 		this.sugarType = sugar;
 		LIQUID = 1.0;
 		WATER = "Water";
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	protected double ingSum(double[] arr) {
@@ -80,6 +91,10 @@ public abstract class SoftDrink {
 			return 0.25;
 		else
 			return 0.0;
+	}
+	
+	public int compareTo(SoftDrink e) {
+		return this.getName().compareTo(e.getName());
 	}
 	
 	

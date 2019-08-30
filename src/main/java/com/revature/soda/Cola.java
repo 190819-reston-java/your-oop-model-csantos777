@@ -1,6 +1,6 @@
 package com.revature.soda;
 
-public class Cola extends SoftDrink implements Production, Comparable<Cola> {
+public class Cola extends SoftDrink implements Production {
 	
 	private String name;
 	private String[] ingredients;
@@ -53,8 +53,8 @@ public class Cola extends SoftDrink implements Production, Comparable<Cola> {
 		return extra + getWater() + ": " + (1-ingSum(recipeQuant)) + "]";
 	}
 	
-	public int compareTo(Cola e) {
-		return this.getName().compareTo(e.getName());
-	}
+//	public int compareTo(Cola e) {
+//		return this.getName().compareTo(e.getName());
+//	}
 
 }

@@ -30,9 +30,9 @@ public class Driver {
 		softDrinkList.add(ba);
 		
 		System.out.println(softDrinkList);
-		Set<SoftDrink> sortedSDL = new TreeSet<SoftDrink>();
+		Set<SoftDrink> sortedSDL = new TreeSet<SoftDrink>(softDrinkList);
 		
-		System.out.println(sortedSDL);
+		System.out.println("sortedSDL: " + sortedSDL);
 		
 		
 		
