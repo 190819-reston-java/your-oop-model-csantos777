@@ -45,6 +45,12 @@ public class Ginger extends SoftDrink implements Production {
 		return isGingerRaw;
 	}
 	
+	public void setRecipeQuants(double ing1, double ing2, double ing3) {
+		recipeQuant[0] = ing1;
+		recipeQuant[1] = ing2;
+		recipeQuant[2] = ing3;
+	}
+	
 	public String feedback(String shortReview) {
 		return shortReview;
 	}

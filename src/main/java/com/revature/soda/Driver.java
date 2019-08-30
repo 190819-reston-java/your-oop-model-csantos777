@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.TreeSet;
-import java.util.Set;
 
 public class Driver {
 
@@ -31,7 +29,7 @@ public class Driver {
 		softDrinkList.add(ab);
 		softDrinkList.add(ba);
 		
-		System.out.println(softDrinkList);
+		//System.out.println(softDrinkList);
 		//Set<SoftDrink> sortedSDL = new TreeSet<SoftDrink>(softDrinkList);
 		//Collections.sort(softDrinkList);
 		
@@ -45,8 +43,16 @@ public class Driver {
 		for (SoftDrink e : softDrinkArr)
 			System.out.println("sortedSDL: " + e);
 		
+		Ginger c;
+		try {
+			c = new Ginger("Vorm","Ale",true,0.8,-5,2);
+			c.meansOfMixing();
+		} catch (NonFormulaException e) {
+			System.out.println("No such drink exists");
+			//e.printStackTrace();
+		}
 		
-		
+		System.out.println("Bye!");
 		
 	}
 
